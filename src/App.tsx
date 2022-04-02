@@ -1,12 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactElement } from 'react';
 import './App.css';
-import { Viewer } from './3D/Viewer';
+import { Viewer } from './Viewer3D/Viewer';
 
-function App() {
+function App(): ReactElement {
   return (
     <div className="App">
-      <Viewer/>
+      <Viewer />
     </div>
   );
 }
