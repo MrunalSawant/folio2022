@@ -1,3 +1,3 @@
 export const Colors = {
-  rendererBackground: '#000000'
+  rendererBackground: '#001100'
 };

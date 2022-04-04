@@ -43,7 +43,9 @@ export default class Experience {
     this.setCamera();
     this.setRenderer();
     this.setWorld();
-    this.update();
+
+    // @ts-ignore
+    window.experience = this;
   }
 
   private setConfig() : void {
@@ -64,6 +66,7 @@ export default class Experience {
 
   private setScene() : void {
     this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0, 1, 0);
   }
 
   private setCamera() : void {
@@ -82,7 +85,7 @@ export default class Experience {
     this.camera.update();
 
     // if (this.renderer) { this.renderer.update(); }
-    console.log('update call');
+
     window.requestAnimationFrame(() => {
       this.update();
     });
