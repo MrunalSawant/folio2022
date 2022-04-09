@@ -1,5 +1,5 @@
 # folio2022
 Personal Portfolio Project In Three.js
 
-## Objective
-Create a react based typescript project with three.js dependecy
+## Work in progress
+[Live](https://mrunalsawant.github.io/folio2022/)
