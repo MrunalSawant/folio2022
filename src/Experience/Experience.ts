@@ -6,13 +6,7 @@ import * as THREE from 'three';
 import Renderer from './Renderer';
 import Camera from './Camera';
 import World from './World';
-
-interface Config {
-    debug : boolean;
-    pixelRatio : number;
-    width : number;
-    height: number;
-}
+import { Config } from '../Utils/Config';
 
 export default class Experience {
   static _instance:Experience;
@@ -57,6 +51,8 @@ export default class Experience {
     this.config.pixelRatio = window.devicePixelRatio;
 
     this.camera.resize();
+
+    this.renderer.resize();
   }
 
   private setConfig() : void {
