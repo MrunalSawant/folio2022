@@ -25,8 +25,8 @@ export default class Renderer {
 
     // Make renderer background transparent
     this.instance.setClearColor(0x000000, 0);
-    this.instance.setSize(window.innerWidth, window.innerHeight);
-    this.instance.setPixelRatio(window.devicePixelRatio);
+    this.instance.setSize(this.experience.config.width, this.experience.config.height);
+    this.instance.setPixelRatio(this.experience.config.pixelRatio);
 
     // this.experience.targetElement!.style.position = 'absolute';
     // this.experience.targetElement!.style.top = '0px';
@@ -42,6 +42,11 @@ export default class Renderer {
     this.instance.shadowMap.needsUpdate = this.instance.shadowMap.enabled;
 
     this.controls = new TrackballControls(this.experience.camera.instance, this.experience.targetElement!);
+  }
+
+  public resize() : void {
+    this.instance.setSize(this.experience.config.width, this.experience.config.height);
+    this.instance.setPixelRatio(this.experience.config.pixelRatio);
   }
 
   public update() : void {

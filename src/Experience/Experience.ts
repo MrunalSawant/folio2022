@@ -44,8 +44,19 @@ export default class Experience {
     this.setRenderer();
     this.setWorld();
 
+    window.addEventListener('resize', () => {
+      this.resize();
+    });
     // @ts-ignore
     window.experience = this;
+  }
+
+  private resize(): void {
+    this.config.width = window.innerWidth;
+    this.config.height = window.innerHeight;
+    this.config.pixelRatio = window.devicePixelRatio;
+
+    this.camera.resize();
   }
 
   private setConfig() : void {
@@ -53,15 +64,12 @@ export default class Experience {
     // pixel ratio
     const pixelRatio = Math.min(Math.max(window.devicePixelRatio, 1), 2);
     // width and height
-    if (this.targetElement) {
-      const boundings = this.targetElement.getBoundingClientRect();
-      this.config = {
-        debug: false,
-        pixelRatio,
-        width: boundings.width,
-        height: boundings.height
-      };
-    }
+    this.config = {
+      debug: false,
+      pixelRatio,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
   }
 
   private setScene() : void {

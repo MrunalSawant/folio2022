@@ -23,4 +23,9 @@ export default class Camera {
     this.instance.updateMatrixWorld();
     this.instance.updateMatrix();
   }
+
+  public resize() : void {
+    this.instance.aspect = this.experience.config.width / this.experience.config.height;
+    this.instance.updateProjectionMatrix();
+  }
 }
