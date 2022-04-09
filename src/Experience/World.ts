@@ -15,7 +15,20 @@ export default class World {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
+    const edges = new THREE.EdgesGeometry(geometry);
+    const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x000000 }));
     this.experience.scene.add(cube);
+    this.experience.scene.add(line);
+
+    // const geometry = new THREE.SphereBufferGeometry(0.5, 64, 64);
+    // const material = new THREE.MeshStandardMaterial();
+    // const textureLoader = new THREE.TextureLoader();
+    // const normalTexture = textureLoader.load('EarthTexture.jpg');
+    // material.metalness = 0.7;
+    // material.roughness = 0.2;
+    // material.normalMap = normalTexture;
+    // const sphere = new THREE.Mesh(geometry, material);
+    // this.experience.scene.add(sphere);
   }
 
   private setLight() : void {
