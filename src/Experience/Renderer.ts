@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
 import Experience from './Experience';
-import { Colors } from '../Constant/Constant';
+// import { Colors } from '../Constant/Constant';
 
 export default class Renderer {
   private experience: Experience;
@@ -23,7 +23,8 @@ export default class Renderer {
       canvas: this.experience.targetElement as HTMLCanvasElement
     });
 
-    this.instance.setClearColor(Colors.rendererBackground, 1);
+    // Make renderer background transparent
+    this.instance.setClearColor(0x000000, 0);
     this.instance.setSize(window.innerWidth, window.innerHeight);
     this.instance.setPixelRatio(window.devicePixelRatio);
 

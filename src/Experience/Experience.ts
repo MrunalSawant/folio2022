@@ -66,7 +66,6 @@ export default class Experience {
 
   private setScene() : void {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(1, 0, 0);
   }
 
   private setCamera() : void {
