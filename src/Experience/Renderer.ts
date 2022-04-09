@@ -19,7 +19,8 @@ export default class Renderer {
   private setInstance() : void {
     this.instance = new THREE.WebGLRenderer({
       alpha: false,
-      antialias: true
+      antialias: true,
+      canvas: this.experience.targetElement as HTMLCanvasElement
     });
 
     this.instance.setClearColor(Colors.rendererBackground, 1);
@@ -32,16 +33,14 @@ export default class Renderer {
     // this.experience.targetElement!.style.width = '100%';
     // this.experience.targetElement!.style.height = '100%';
 
-    // this.instance.physicallyCorrectLights = true;
-    // this.instance.outputEncoding = THREE.sRGBEncoding;
-    // this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
-    // this.instance.shadowMap.enabled = true;
-    // this.instance.shadowMap.autoUpdate = false;
-    // this.instance.shadowMap.needsUpdate = this.instance.shadowMap.enabled;
+    this.instance.physicallyCorrectLights = true;
+    this.instance.outputEncoding = THREE.sRGBEncoding;
+    this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.instance.shadowMap.enabled = true;
+    this.instance.shadowMap.autoUpdate = false;
+    this.instance.shadowMap.needsUpdate = this.instance.shadowMap.enabled;
 
     this.controls = new TrackballControls(this.experience.camera.instance, this.experience.targetElement!);
-
-    document.body.appendChild(this.instance.domElement);
   }
 
   public update() : void {

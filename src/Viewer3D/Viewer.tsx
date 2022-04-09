@@ -10,10 +10,6 @@ export class Viewer extends React.Component {
   // state: ViewerState = { isSceneReady: false, isStarted: false };
 
   async componentDidMount(): Promise<void> {
-    const canvas = document.getElementById('viewer3d');
-    if (canvas) {
-      console.log('canvas found');
-    }
     const experience = new Experience();
     experience.update();
   }

@@ -8,12 +8,29 @@ export default class World {
   constructor() {
     this.experience = new Experience();
     this.setWorld();
+    this.setLight();
   }
 
   private setWorld() : void {
-    const geometry = new THREE.BoxGeometry(100, 100, 100);
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
     this.experience.scene.add(cube);
+  }
+
+  private setLight() : void {
+    const hemisphereLight = new THREE.HemisphereLight(0xddeeff, 0x0f0e0d, 0.5);
+    hemisphereLight.position.set(20, 20, 20);
+    hemisphereLight.castShadow = false;
+
+    const pointLight = new THREE.PointLight(0xffffff, 1.5, 80000, 10);
+    pointLight.position.set(-200, 400, 200);
+    pointLight.castShadow = true;
+    pointLight.shadow.mapSize.width = 1024;
+    pointLight.shadow.mapSize.height = 1024;
+    pointLight.shadow.radius = 1;
+
+    this.experience.scene.add(hemisphereLight);
+    this.experience.scene.add(pointLight);
   }
 }

@@ -66,7 +66,7 @@ export default class Experience {
 
   private setScene() : void {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0, 1, 0);
+    this.scene.background = new THREE.Color(1, 0, 0);
   }
 
   private setCamera() : void {
@@ -84,7 +84,7 @@ export default class Experience {
   public update() : void {
     this.camera.update();
 
-    // if (this.renderer) { this.renderer.update(); }
+    if (this.renderer) { this.renderer.update(); }
 
     window.requestAnimationFrame(() => {
       this.update();
