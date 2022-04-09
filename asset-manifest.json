@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/folio2022/static/css/main.d75c3c4b.css",
-    "main.js": "/folio2022/static/js/main.dc6e9198.js",
+    "main.js": "/folio2022/static/js/main.d1361dc7.js",
     "index.html": "/folio2022/index.html",
     "main.d75c3c4b.css.map": "/folio2022/static/css/main.d75c3c4b.css.map",
-    "main.dc6e9198.js.map": "/folio2022/static/js/main.dc6e9198.js.map"
+    "main.d1361dc7.js.map": "/folio2022/static/js/main.d1361dc7.js.map"
   },
   "entrypoints": [
     "static/css/main.d75c3c4b.css",
-    "static/js/main.dc6e9198.js"
+    "static/js/main.d1361dc7.js"
   ]
 }
