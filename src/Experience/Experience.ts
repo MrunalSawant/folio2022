@@ -87,6 +87,8 @@ export default class Experience {
   public update() : void {
     this.camera.update();
 
+    this.world.update();
+
     if (this.renderer) { this.renderer.update(); }
 
     window.requestAnimationFrame(() => {
