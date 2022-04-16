@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/folio2022/static/css/main.a408b330.css",
-    "main.js": "/folio2022/static/js/main.d1361dc7.js",
+    "main.css": "/folio2022/static/css/main.0e165e85.css",
+    "main.js": "/folio2022/static/js/main.32352fb8.js",
+    "static/media/EarthTexture.jpg": "/folio2022/static/media/EarthTexture.54672c1f3ba121d80470.jpg",
+    "static/media/SunTexture.jpg": "/folio2022/static/media/SunTexture.b34e6ead10e18ad3ad77.jpg",
+    "static/media/Galaxy.jpg": "/folio2022/static/media/Galaxy.30f0dea14bab952ba111.jpg",
     "index.html": "/folio2022/index.html",
-    "main.a408b330.css.map": "/folio2022/static/css/main.a408b330.css.map",
-    "main.d1361dc7.js.map": "/folio2022/static/js/main.d1361dc7.js.map"
+    "main.0e165e85.css.map": "/folio2022/static/css/main.0e165e85.css.map",
+    "main.32352fb8.js.map": "/folio2022/static/js/main.32352fb8.js.map"
   },
   "entrypoints": [
-    "static/css/main.a408b330.css",
-    "static/js/main.d1361dc7.js"
+    "static/css/main.0e165e85.css",
+    "static/js/main.32352fb8.js"
   ]
 }
