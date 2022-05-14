@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/folio2022/static/css/main.0e165e85.css",
-    "main.js": "/folio2022/static/js/main.32352fb8.js",
-    "static/media/EarthTexture.jpg": "/folio2022/static/media/EarthTexture.54672c1f3ba121d80470.jpg",
-    "static/media/SunTexture.jpg": "/folio2022/static/media/SunTexture.b34e6ead10e18ad3ad77.jpg",
-    "static/media/Galaxy.jpg": "/folio2022/static/media/Galaxy.30f0dea14bab952ba111.jpg",
+    "main.css": "/folio2022/static/css/main.eddde207.css",
+    "main.js": "/folio2022/static/js/main.6e6eb524.js",
+    "static/media/SunTexture.jpg": "/folio2022/static/media/SunTexture.4b569137334e61081651.jpg",
+    "static/media/space_dn.png": "/folio2022/static/media/space_dn.db01ab52baa2d141afa2.png",
+    "static/media/space_ft.png": "/folio2022/static/media/space_ft.1b877d5e4af5b82fc905.png",
+    "static/media/space_lf.png": "/folio2022/static/media/space_lf.18ddea4a9deb05750ab5.png",
+    "static/media/space_up.png": "/folio2022/static/media/space_up.4801e486436d4c9c422c.png",
+    "static/media/EarthTexture.jpg": "/folio2022/static/media/EarthTexture.981cc3e3660e809249a3.jpg",
+    "static/media/space_rt.png": "/folio2022/static/media/space_rt.795f0cf3f251f0cd7b54.png",
+    "static/media/space_bk.png": "/folio2022/static/media/space_bk.9c72053143dfaed4f55f.png",
     "index.html": "/folio2022/index.html",
-    "main.0e165e85.css.map": "/folio2022/static/css/main.0e165e85.css.map",
-    "main.32352fb8.js.map": "/folio2022/static/js/main.32352fb8.js.map"
+    "main.eddde207.css.map": "/folio2022/static/css/main.eddde207.css.map",
+    "main.6e6eb524.js.map": "/folio2022/static/js/main.6e6eb524.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e165e85.css",
-    "static/js/main.32352fb8.js"
+    "static/css/main.eddde207.css",
+    "static/js/main.6e6eb524.js"
   ]
 }
