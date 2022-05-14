@@ -42,6 +42,7 @@ export default class Renderer {
     this.instance.shadowMap.needsUpdate = this.instance.shadowMap.enabled;
 
     this.controls = new TrackballControls(this.experience.camera.instance, this.experience.targetElement!);
+    this.controls.maxDistance = 5000;
   }
 
   public resize() : void {

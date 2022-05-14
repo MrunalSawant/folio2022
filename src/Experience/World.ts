@@ -1,9 +1,17 @@
 /* eslint-disable import/no-cycle */
 import * as THREE from 'three';
+import * as dat from 'dat.gui';
 import Experience from './Experience';
 import EarthTexture from '../Assets/EarthTexture.jpg';
 import SunTexture from '../Assets/SunTexture.jpg';
+import GalaxyBk from '../Assets/galaxy/space_bk.png';
+import GalaxyDn from '../Assets/galaxy/space_dn.png';
+import GalaxyLf from '../Assets/galaxy/space_lf.png';
+import GalaxyRt from '../Assets/galaxy/space_rt.png';
+import GalaxyUp from '../Assets/galaxy/space_up.png';
+import GalaxyFt from '../Assets/galaxy/space_ft.png';
 
+const gui = new dat.GUI();
 export default class World {
   private experience: Experience;
 
@@ -28,10 +36,11 @@ export default class World {
 
     this.setSun();
     this.setEarth();
+    this.setSkyBox();
   }
 
   private setEarth() : void {
-    const geometry = new THREE.SphereBufferGeometry(0.125, 64, 64);
+    const geometry = new THREE.SphereBufferGeometry(25, 64, 64);
 
     const textureLoader = new THREE.TextureLoader();
     const normalTexture = textureLoader.load(
@@ -41,10 +50,13 @@ export default class World {
     this.earth = new THREE.Mesh(geometry, material);
     this.earth.position.set(1.5, 0, 0);
     this.experience.scene.add(this.earth);
+
+    gui.add(this.experience.camera.instance.position, 'z').min(0).max(1000).name('Camera z')
+      .step(1);
   }
 
   private setSun() : void {
-    const geometry = new THREE.SphereBufferGeometry(0.5, 64, 64);
+    const geometry = new THREE.SphereBufferGeometry(100, 64, 64);
 
     const textureLoader = new THREE.TextureLoader();
     const normalTexture = textureLoader.load(
@@ -72,14 +84,30 @@ export default class World {
     this.experience.scene.add(pointLight);
   }
 
+  private setSkyBox() : void {
+    const skyBoxGeometry = new THREE.BoxGeometry(10000, 10000, 10000);
+    const matArr = this.createMaterialArray();
+    const skybox = new THREE.Mesh(skyBoxGeometry, matArr);
+    this.experience.scene.add(skybox);
+  }
+
+  private createMaterialArray(): THREE.Material[] {
+    const textures = [GalaxyFt, GalaxyBk, GalaxyUp, GalaxyDn, GalaxyRt, GalaxyLf];
+    const matArr = textures.map((texture) => {
+      const t = new THREE.TextureLoader().load(texture);
+      return new THREE.MeshBasicMaterial({ map: t, side: THREE.BackSide });
+    });
+    return matArr;
+  }
+
   public update(): void {
     this.sun.rotation.y += 0.01;
-    this.earth.rotation.y += 0.0125;
+    // this.earth.rotation.y += 12.5;
 
-    const r = Date.now() * 0.0005;
+    // const r = Date.now() * 0.5;
 
-    this.earth.position.x = 2 * Math.cos(r);
-    this.earth.position.z = 2 * Math.sin(r);
-    this.earth.position.y = 2 * Math.sin(r);
+    // this.earth.position.x = 2 * Math.cos(r);
+    // this.earth.position.z = 2 * Math.sin(r);
+    // this.earth.position.y = 2 * Math.sin(r);
   }
 }
