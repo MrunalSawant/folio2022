@@ -4,12 +4,12 @@ import * as dat from 'dat.gui';
 import Experience from './Experience';
 import EarthTexture from '../Assets/EarthTexture.jpg';
 import SunTexture from '../Assets/SunTexture.jpg';
-import GalaxyBk from '../Assets/galaxy/space_bk.png';
-import GalaxyDn from '../Assets/galaxy/space_dn.png';
-import GalaxyLf from '../Assets/galaxy/space_lf.png';
-import GalaxyRt from '../Assets/galaxy/space_rt.png';
-import GalaxyUp from '../Assets/galaxy/space_up.png';
-import GalaxyFt from '../Assets/galaxy/space_ft.png';
+import GalaxyBk from '../Assets/galaxy/redeclipse_bk.png';
+import GalaxyDn from '../Assets/galaxy/redeclipse_dn.png';
+import GalaxyLf from '../Assets/galaxy/redeclipse_lf.png';
+import GalaxyRt from '../Assets/galaxy/redeclipse_rt.png';
+import GalaxyUp from '../Assets/galaxy/redeclipse_up.png';
+import GalaxyFt from '../Assets/galaxy/redeclipse_ft.png';
 
 const gui = new dat.GUI();
 export default class World {
@@ -65,7 +65,7 @@ export default class World {
     const material = new THREE.MeshBasicMaterial({ map: normalTexture });
     this.sun = new THREE.Mesh(geometry, material);
 
-    this.experience.scene.add(this.sun);
+    // this.experience.scene.add(this.sun);
   }
 
   private setLight() : void {
@@ -102,12 +102,12 @@ export default class World {
 
   public update(): void {
     this.sun.rotation.y += 0.01;
-    // this.earth.rotation.y += 12.5;
+    this.earth.rotation.y += 0.0125;
 
-    // const r = Date.now() * 0.5;
+    //    const r = Date.now() * 0.5;
 
-    // this.earth.position.x = 2 * Math.cos(r);
-    // this.earth.position.z = 2 * Math.sin(r);
-    // this.earth.position.y = 2 * Math.sin(r);
+    // this.earth.position.x = 100 * Math.cos(r);
+    // // this.earth.position.z = 100 * Math.sin(r);
+    // this.earth.position.y = 100 * Math.sin(r);
   }
 }

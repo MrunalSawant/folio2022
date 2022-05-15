@@ -14,7 +14,6 @@ export class Viewer extends React.Component {
         <div className="viewer-container">
           <canvas id="viewer3d" />
         </div>
-
       </div>
     );
   }
