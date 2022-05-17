@@ -53,6 +53,8 @@ export default class World {
 
     gui.add(this.experience.camera.instance.position, 'z').min(0).max(1000).name('Camera z')
       .step(1);
+    gui.add(this.experience.camera.instance.position, 'y').min(0).max(1000).name('Camera y')
+      .step(1);
   }
 
   private setSun() : void {
