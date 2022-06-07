@@ -7,16 +7,23 @@ import fragmentShader from '../Shaders/Blackhole/fragmentShader.glsl';
 export default class Blackhole {
   private experience: Experience;
 
+  private clock : THREE.Clock;
+
+  private material!: THREE.ShaderMaterial;
+
+  private count : number;
+
   constructor() {
     this.experience = new Experience();
+    this.clock = new THREE.Clock();
+    this.clock.start();
+    this.count = 1560;
     this.setMesh();
   }
 
   private setMesh(): void {
-    console.log(vertexShader);
-    console.log(fragmentShader);
-    const geometry = new THREE.PlaneGeometry(3, 3, 1, 1);
-    const material = new THREE.ShaderMaterial({
+    const geometry = new THREE.RingGeometry(1, 2, 32);
+    this.material = new THREE.ShaderMaterial({
       transparent: true,
       blending: THREE.AdditiveBlending,
       side: THREE.DoubleSide,
@@ -31,7 +38,12 @@ export default class Blackhole {
       fragmentShader
     });
 
-    const mesh = new THREE.Mesh(geometry, material);
+    const mesh = new THREE.Mesh(geometry, this.material);
     this.experience.scene.add(mesh);
+  }
+
+  public update() : void {
+    this.count += 1;
+    this.material.uniforms.uTime.value = this.count * 20;
   }
 }

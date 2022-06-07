@@ -92,13 +92,6 @@ export default class World {
   }
 
   public update(): void {
-    // this.sun.rotation.y += 0.01;
-    // this.earth.rotation.y += 0.0125;
-
-    //    const r = Date.now() * 0.5;
-
-    // this.earth.position.x = 100 * Math.cos(r);
-    // // this.earth.position.z = 100 * Math.sin(r);
-    // this.earth.position.y = 100 * Math.sin(r);
+    this.blackhole.update();
   }
 }

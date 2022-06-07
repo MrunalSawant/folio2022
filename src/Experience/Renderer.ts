@@ -24,15 +24,9 @@ export default class Renderer {
     });
 
     // Make renderer background transparent
-    this.instance.setClearColor(0x000000, 0);
+    this.instance.setClearColor(0x000000, 1);
     this.instance.setSize(this.experience.config.width, this.experience.config.height);
     this.instance.setPixelRatio(this.experience.config.pixelRatio);
-
-    // this.experience.targetElement!.style.position = 'absolute';
-    // this.experience.targetElement!.style.top = '0px';
-    // this.experience.targetElement!.style.left = '0px';
-    // this.experience.targetElement!.style.width = '100%';
-    // this.experience.targetElement!.style.height = '100%';
 
     this.instance.physicallyCorrectLights = true;
     this.instance.outputEncoding = THREE.sRGBEncoding;
