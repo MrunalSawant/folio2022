@@ -1,6 +1,5 @@
 /* eslint-disable import/no-cycle */
 import * as THREE from 'three';
-import * as dat from 'dat.gui';
 import Experience from './Experience';
 import EarthTexture from '../Assets/EarthTexture.jpg';
 import SunTexture from '../Assets/SunTexture.jpg';
@@ -10,8 +9,8 @@ import GalaxyLf from '../Assets/galaxy/redeclipse_lf.png';
 import GalaxyRt from '../Assets/galaxy/redeclipse_rt.png';
 import GalaxyUp from '../Assets/galaxy/redeclipse_up.png';
 import GalaxyFt from '../Assets/galaxy/redeclipse_ft.png';
+import Blackhole from './Blackhole/Blackhole';
 
-const gui = new dat.GUI();
 export default class World {
   private experience: Experience;
 
@@ -19,24 +18,19 @@ export default class World {
 
   private earth! : THREE.Mesh;
 
+  private blackhole! : Blackhole;
+
   constructor() {
     this.experience = new Experience();
-    this.setWorld();
+    this.blackhole = new Blackhole();
+    // this.setWorld();
     // this.setLight();
   }
 
   private setWorld() : void {
-    // const geometry = new THREE.BoxGeometry(1, 1, 1);
-    // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    // const cube = new THREE.Mesh(geometry, material);
-    // const edges = new THREE.EdgesGeometry(geometry);
-    // const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x000000 }));
-    // this.experience.scene.add(cube);
-    // this.experience.scene.add(line);
-
     this.setSun();
     this.setEarth();
-    this.setSkyBox();
+    // this.setSkyBox();
   }
 
   private setEarth() : void {
@@ -50,11 +44,6 @@ export default class World {
     this.earth = new THREE.Mesh(geometry, material);
     this.earth.position.set(1.5, 0, 0);
     this.experience.scene.add(this.earth);
-
-    gui.add(this.experience.camera.instance.position, 'z').min(0).max(1000).name('Camera z')
-      .step(1);
-    gui.add(this.experience.camera.instance.position, 'y').min(0).max(1000).name('Camera y')
-      .step(1);
   }
 
   private setSun() : void {
@@ -103,8 +92,8 @@ export default class World {
   }
 
   public update(): void {
-    this.sun.rotation.y += 0.01;
-    this.earth.rotation.y += 0.0125;
+    // this.sun.rotation.y += 0.01;
+    // this.earth.rotation.y += 0.0125;
 
     //    const r = Date.now() * 0.5;
 
