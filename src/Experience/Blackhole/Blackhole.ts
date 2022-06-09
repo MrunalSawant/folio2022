@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import Experience from '../Experience';
 import vertexShader from '../Shaders/Blackhole/vertexShader.glsl';
 import fragmentShader from '../Shaders/Blackhole/fragmentShader.glsl';
+import Halo from './Halo';
 
 export default class Blackhole {
   private experience: Experience;
@@ -13,9 +14,12 @@ export default class Blackhole {
 
   private count : number;
 
+  private halo : Halo;
+
   constructor() {
     this.experience = new Experience();
     this.clock = new THREE.Clock();
+    this.halo = new Halo();
     this.clock.start();
     this.count = 1560;
     this.setMesh();
@@ -45,5 +49,7 @@ export default class Blackhole {
   public update() : void {
     this.count += 1;
     this.material.uniforms.uTime.value = this.count * 20;
+
+    this.halo.update();
   }
 }
