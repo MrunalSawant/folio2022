@@ -9,7 +9,7 @@ import World from './World';
 import { Config } from '../Utils/Config';
 
 export default class Experience {
-  static _instance:Experience;
+  static _instance : Experience;
 
   public renderer! : Renderer;
 

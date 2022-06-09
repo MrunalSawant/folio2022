@@ -3,12 +3,12 @@ import * as THREE from 'three';
 import Experience from './Experience';
 import EarthTexture from '../Assets/EarthTexture.jpg';
 import SunTexture from '../Assets/SunTexture.jpg';
-import GalaxyBk from '../Assets/galaxy/redeclipse_bk.png';
-import GalaxyDn from '../Assets/galaxy/redeclipse_dn.png';
-import GalaxyLf from '../Assets/galaxy/redeclipse_lf.png';
-import GalaxyRt from '../Assets/galaxy/redeclipse_rt.png';
-import GalaxyUp from '../Assets/galaxy/redeclipse_up.png';
-import GalaxyFt from '../Assets/galaxy/redeclipse_ft.png';
+import GalaxyBk from '../Assets/galaxy/space_bk.png';
+import GalaxyDn from '../Assets/galaxy/space_dn.png';
+import GalaxyLf from '../Assets/galaxy/space_lf.png';
+import GalaxyRt from '../Assets/galaxy/space_rt.png';
+import GalaxyUp from '../Assets/galaxy/space_up.png';
+import GalaxyFt from '../Assets/galaxy/space_ft.png';
 import Blackhole from './Blackhole/Blackhole';
 
 export default class World {
@@ -23,14 +23,14 @@ export default class World {
   constructor() {
     this.experience = new Experience();
     this.blackhole = new Blackhole();
-    // this.setWorld();
-    // this.setLight();
+    this.setWorld();
+    this.setLight();
   }
 
   private setWorld() : void {
     this.setSun();
     this.setEarth();
-    // this.setSkyBox();
+    this.setSkyBox();
   }
 
   private setEarth() : void {
