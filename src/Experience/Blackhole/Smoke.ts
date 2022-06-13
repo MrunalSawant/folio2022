@@ -65,8 +65,7 @@ export default class Smoke {
       item.mesh = new THREE.Mesh(geometry, item.material);
 
       item.material.color = new THREE.Color('Orange');
-      // Mesh
-      // item.mesh = new THREE.Mesh(this.geometry, item.material);
+
       item.mesh.position.z = (i + 1) * 0.0005;
       this.group.add(item.mesh);
 
@@ -92,9 +91,7 @@ export default class Smoke {
       }
 
       if (item.mesh !== undefined) {
-        // Rotation
         item.mesh.rotation.z = elapsedTime * item.rotationSpeed;
-        // Position
         const radius = 1 - item.progress * item.floatingSpeed;
         item.mesh.position.x = Math.sin(item.angle) * radius;
         item.mesh.position.y = Math.cos(item.angle) * radius;
