@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/folio2022/static/css/main.6c9ebb89.css",
-    "main.js": "/folio2022/static/js/main.a8015637.js",
+    "main.js": "/folio2022/static/js/main.3f35e280.js",
     "static/media/SunTexture.jpg": "/folio2022/static/media/SunTexture.4b569137334e61081651.jpg",
     "static/media/space_dn.png": "/folio2022/static/media/space_dn.db01ab52baa2d141afa2.png",
     "static/media/space_ft.png": "/folio2022/static/media/space_ft.1b877d5e4af5b82fc905.png",
@@ -12,10 +12,10 @@
     "static/media/space_bk.png": "/folio2022/static/media/space_bk.9c72053143dfaed4f55f.png",
     "index.html": "/folio2022/index.html",
     "main.6c9ebb89.css.map": "/folio2022/static/css/main.6c9ebb89.css.map",
-    "main.a8015637.js.map": "/folio2022/static/js/main.a8015637.js.map"
+    "main.3f35e280.js.map": "/folio2022/static/js/main.3f35e280.js.map"
   },
   "entrypoints": [
     "static/css/main.6c9ebb89.css",
-    "static/js/main.a8015637.js"
+    "static/js/main.3f35e280.js"
   ]
 }
