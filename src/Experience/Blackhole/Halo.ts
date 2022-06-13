@@ -27,8 +27,8 @@ export default class Halo {
       uniforms:
         {
           uTime: { value: 0 },
-          uColorA: { value: new THREE.Color('Red') },
-          uColorB: { value: new THREE.Color('Orange') },
+          uColorA: { value: new THREE.Color('Black') },
+          uColorB: { value: new THREE.Color('Red') },
           uColorC: { value: new THREE.Color('Orange') }
         },
       vertexShader,
@@ -41,6 +41,6 @@ export default class Halo {
 
   public update() : void {
     this.count += 1;
-    this.material.uniforms.uTime.value = this.count * 12;
+    this.material.uniforms.uTime.value = this.count * 20;
   }
 }

@@ -23,6 +23,8 @@ export default class Experience {
 
   public world! : World;
 
+  public time! : THREE.Clock;
+
   constructor() {
     if (Experience._instance) {
       return Experience._instance;
@@ -33,6 +35,7 @@ export default class Experience {
     this.targetElement = document.getElementById('viewer3d');
 
     this.setConfig();
+    this.setTime();
     this.setScene();
     this.setCamera();
     this.setRenderer();
@@ -53,6 +56,11 @@ export default class Experience {
     this.camera.resize();
 
     this.renderer.resize();
+  }
+
+  private setTime() : void {
+    this.time = new THREE.Clock();
+    this.time.start();
   }
 
   private setConfig() : void {

@@ -4,24 +4,21 @@ import Experience from '../Experience';
 import vertexShader from '../Shaders/Blackhole/vertexShader.glsl';
 import fragmentShader from '../Shaders/Blackhole/fragmentShader.glsl';
 import Halo from './Halo';
+import Smoke from './Smoke';
 
 export default class Blackhole {
   private experience: Experience;
 
-  private clock : THREE.Clock;
-
   private material!: THREE.ShaderMaterial;
-
-  private count : number;
 
   private halo : Halo;
 
+  private smoke : Smoke;
+
   constructor() {
     this.experience = new Experience();
-    this.clock = new THREE.Clock();
     this.halo = new Halo();
-    this.clock.start();
-    this.count = 1560;
+    this.smoke = new Smoke();
     this.setMesh();
   }
 
@@ -29,7 +26,7 @@ export default class Blackhole {
     const geometry = new THREE.RingGeometry(1, 2, 32);
     this.material = new THREE.ShaderMaterial({
       transparent: true,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
       side: THREE.DoubleSide,
       depthWrite: false,
       uniforms:
@@ -47,9 +44,8 @@ export default class Blackhole {
   }
 
   public update() : void {
-    this.count += 1;
-    this.material.uniforms.uTime.value = this.count * 20;
-
+    this.material.uniforms.uTime.value = this.experience.time.getElapsedTime() * 1000;
     this.halo.update();
+    this.smoke.update();
   }
 }
