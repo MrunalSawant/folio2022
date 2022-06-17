@@ -1,31 +1,8 @@
 /* eslint-disable import/no-cycle */
 import * as THREE from 'three';
 import Experience from '../Experience';
-import SmokeTexture from '../../Assets/smoke/smoke.png';
-
-interface Item {
-    floatingSpeed : number;
-    rotationSpeed : number;
-    progress : number;
-    material : THREE.MeshBasicMaterial | undefined;
-    scale : number;
-    angle : number;
-    mesh : THREE.Mesh | undefined;
-}
-
-function getDefaultItem() : Item {
-  const item : Item = {
-    floatingSpeed: 0.0,
-    rotationSpeed: 0.0,
-    progress: 0.0,
-    material: undefined,
-    scale: 0.0,
-    angle: 0.0,
-    mesh: undefined
-  };
-
-  return item;
-}
+import SmokeTexture from '../../Assets/blackhole/smoke.png';
+import { Item, getDefaultItem } from '../../Utils/Item';
 
 export default class Smoke {
   private experience : Experience;

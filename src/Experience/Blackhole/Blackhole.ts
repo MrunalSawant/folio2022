@@ -5,6 +5,8 @@ import vertexShader from '../Shaders/Blackhole/vertexShader.glsl';
 import fragmentShader from '../Shaders/Blackhole/fragmentShader.glsl';
 import Halo from './Halo';
 import Smoke from './Smoke';
+import Flash from './Flash';
+import Particle from './Particle';
 
 export default class Blackhole {
   private experience: Experience;
@@ -15,10 +17,16 @@ export default class Blackhole {
 
   private smoke : Smoke;
 
+  private flash : Flash;
+
+  private particle: Particle;
+
   constructor() {
     this.experience = new Experience();
     this.halo = new Halo();
     this.smoke = new Smoke();
+    this.flash = new Flash();
+    this.particle = new Particle();
     this.setMesh();
   }
 
@@ -47,5 +55,7 @@ export default class Blackhole {
     this.material.uniforms.uTime.value = this.experience.time.getElapsedTime() * 1000;
     this.halo.update();
     this.smoke.update();
+    this.flash.update();
+    this.particle.update();
   }
 }

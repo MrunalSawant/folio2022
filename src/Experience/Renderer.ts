@@ -7,7 +7,7 @@ import Experience from './Experience';
 export default class Renderer {
   private experience: Experience;
 
-  private instance! : THREE.WebGLRenderer;
+  public instance! : THREE.WebGLRenderer;
 
   public controls! : TrackballControls;
 

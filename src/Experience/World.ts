@@ -43,7 +43,7 @@ export default class World {
     const material = new THREE.MeshBasicMaterial({ map: normalTexture });
     this.earth = new THREE.Mesh(geometry, material);
     this.earth.position.set(1.5, 0, 0);
-    this.experience.scene.add(this.earth);
+    // this.experience.scene.add(this.earth);
   }
 
   private setSun() : void {
